@@ -56,7 +56,7 @@ CMD ["airflow"]
 
 
 def send_build_request(build_params):
-    api_url = "localhost:8081/build-and-push"
+    api_url = "http://localhost:8081/build-and-push"
     try:
         response = requests.post(api_url, json=build_params)
         response.raise_for_status()
