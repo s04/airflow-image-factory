@@ -57,7 +57,7 @@ CMD ["airflow"]
 
 
 def send_build_request(build_params):
-    api_url = "http://host.docker.internal:8081/build-and-push"
+    api_url = "http://172.17.0.1:8081/build-and-push"
     try:
         response = requests.post(api_url, json=build_params)
         print(f"Request sent: {response.request.url}")
