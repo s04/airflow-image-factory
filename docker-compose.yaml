@@ -4,8 +4,6 @@ services:
       context: ./app
     ports:
       - "8501:8501"
-    extra_hosts:
-      - ${EXTRA_HOST}
     depends_on:
       - api
     volumes:
