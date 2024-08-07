@@ -1,4 +1,5 @@
 import streamlit as st
+from urllib.parse import urljoin
 import requests
 import hashlib
 import json
@@ -56,9 +57,13 @@ CMD ["airflow"]
 
 
 def send_build_request(build_params):
-    api_url = "http://localhost:8081/build-and-push"
+    api_url = "http://host.docker.internal:8081/build-and-push"
     try:
         response = requests.post(api_url, json=build_params)
+        print(f"Request sent: {response.request.url}")
+        print(f"Request body: {response.request.body}")
+        st.sidebar.write(f"Request sent: {response.request.url}")
+        st.sidebar.write(f"Request body: {response.request.body}")  # Corrected line
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
