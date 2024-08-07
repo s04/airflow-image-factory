@@ -8,6 +8,8 @@ services:
       - ${EXTRA_HOST}
     depends_on:
       - api
+    volumes:
+      - /etc/custom_hosts:/etc/hosts
 
   api:
     build:
