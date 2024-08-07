@@ -8,9 +8,9 @@ services:
       - ${EXTRA_HOST}
     depends_on:
       - api
-      
+
   api:
-    build: 
+    build:
       context: ./api
     ports:
       - "8081:8080"

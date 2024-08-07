@@ -11,11 +11,11 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-COPY ./src/requirements.txt . 
+COPY requirements.txt . 
 
 RUN pip3 install -r requirements.txt
 
-COPY src /src
+COPY . .
 
 EXPOSE 8501
 
