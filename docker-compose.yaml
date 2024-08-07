@@ -6,8 +6,6 @@ services:
       - "8501:8501"
     depends_on:
       - api
-    volumes:
-      - /etc/custom_hosts:/etc/hosts
 
   api:
     build:
